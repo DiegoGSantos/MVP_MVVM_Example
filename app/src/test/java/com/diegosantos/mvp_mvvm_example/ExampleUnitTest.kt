@@ -38,6 +38,11 @@ class ExampleUnitTest {
 
         sampleViewModel.getRandomNumber()
         assertEquals("45", sampleViewModel.currentRandomNumber.get())
+
+        Mockito.`when`(randomNumberRepository.getRandomNumber()).thenReturn(70)
+
+        sampleViewModel.getRandomNumber()
+        assertEquals("70", sampleViewModel.currentRandomNumber.get())
     }
 
     @Test
